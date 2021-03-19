@@ -1,6 +1,6 @@
 
 import React from 'react';
-import clsx from 'clsx';
+// import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import './Navbar.css';
 
@@ -19,47 +19,16 @@ import GoogleSignIn from '../../assets/googleButton.png';
 import Button from '@material-ui/core/Button';
 
 
-const menuWidth = '43vw';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-  },
-  appBar: {
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-      background: 'red',
-    }),
   },
   title: {
     flexGrow: 1,
     fontSize: '1.6rem',
     color: '#364f6b',
     fontWeight: 'bold',
-  },
-  menubutton: {
-    height: '5vh',
-    width: '5vw',
-    color: '#364f6b',
-  },
-  hide: {
-    display: 'none',
-  },
-  drawer: {
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: menuWidth,
-    overflow: 'hidden',
-  },
-  drawerHeader: {
-    display: 'flex',
-    alignItems: 'center',
-    padding: theme.spacing(0, 1),
-    ...theme.mixins.toolbar,
-    justifyContent: 'flex-start',
-    height: '8.5vh'
   },
   modal: {
     display: 'flex',
@@ -89,11 +58,6 @@ const useStyles = makeStyles((theme) => ({
   google: {
     width: '90%',
     borderRadius: '5%',
-    // backgroundColor: 'red',
-  },
-  facebook: {
-    borderRadius: '4%',
-    width: '87%',
   },
   buttonBase: {
     width: 'fit-content',
@@ -139,8 +103,7 @@ export default function NavBar (props) {
       <HideOnScroll {...props}>
         <AppBar
           position="fixed"
-          className={clsx(classes.appBar)}
-          style={{ background: '#FAF9F8' }}
+          style={{ background: '#FAF9F8', height: '8.5vh', paddingTop: '0.5vh' }}
         >
           <Toolbar>
             <a href="/">
@@ -155,7 +118,7 @@ export default function NavBar (props) {
                           Sign In
             </Button>
           </Toolbar>
-          <div className="NavBarColorLine"></div>
+          <div className="NavBarColorLine" style={{ position: 'absolute', bottom: 0}}></div>
         </AppBar>
       </HideOnScroll>
       <Modal

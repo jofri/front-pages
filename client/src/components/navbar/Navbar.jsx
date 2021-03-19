@@ -35,13 +35,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
   },
-  appBar: {
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-      background: 'red',
-    }),
-  },
   title: {
     flexGrow: 1,
     fontSize: '1.6rem',
@@ -52,20 +45,6 @@ const useStyles = makeStyles((theme) => ({
     height: '5vh',
     width: '5vw',
     color: '#364f6b',
-  },
-  hide: {
-    display: 'none',
-  },
-  drawer: {
-    flexShrink: 0,
-  },
-  drawerHeader: {
-    display: 'flex',
-    alignItems: 'center',
-    padding: theme.spacing(0, 1),
-    ...theme.mixins.toolbar,
-    justifyContent: 'flex-start',
-    height: '8.5vh'
   },
   list: {
     width: menuWidth,
@@ -171,7 +150,6 @@ export default function NavBar (props) {
       <CssBaseline />
       <AppBar
         position="fixed"
-        className={clsx(classes.appBar)}
         style={{ background: '#FAF9F8' }}
       >
         <Toolbar>
